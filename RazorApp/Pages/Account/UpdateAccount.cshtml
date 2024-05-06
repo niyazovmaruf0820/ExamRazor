@@ -1,0 +1,33 @@
+@page
+@model RazorApp.Pages.Account.UpdateAccountModel
+@{
+    ViewData["Title"] = "Update Account";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>@ViewData["Title"]</h1>
+
+        <form method="post">
+            <input type="hidden" asp-for="_Account.Id" />
+
+            <div class="form-group">
+                <label asp-for="_Account.AccountNumber">Account AccountNumber:</label>
+                <input asp-for="_Account.AccountNumber" class="form-control" />
+                <span asp-validation-for="_Account.AccountNumber" class="text-danger"></span>
+            </div>
+
+            <!-- Добавьте другие поля DTO здесь, если необходимо -->
+
+            <button type="submit" class="btn btn-primary">Update Account</button>
+            <a asp-page="/Account/GetAccounts" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</body>
+</html>
